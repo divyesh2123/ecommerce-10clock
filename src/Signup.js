@@ -19,7 +19,7 @@ export default function Signup(){
    
     
 
-    // const myNav = useNavigate();
+     const myNav = useNavigate();
 
     const myChangeHandler = (e)=>{
 
@@ -31,7 +31,7 @@ export default function Signup(){
 
         e.preventDefault();
 
-        fetch("http://localhost:4000/accounts/register",{
+        fetch("https://real-pear-fly-kilt.cyclic.app/accounts/register",{
             body:JSON.stringify(data),
             method:"POST",
             headers:{
@@ -41,7 +41,7 @@ export default function Signup(){
         }).then(y=>y);
         
         console.log(data);
-        // myNav("/productlist");
+        myNav("/");
 
        
     }
@@ -78,7 +78,7 @@ export default function Signup(){
         </div>
 		
     </form>
-	<div className="text-center">Already have an account? <Link to="/" >Login here</Link></div>
+	<div className="text-center">Already have an account? <Link to="/" style={{color: "red"}}>Login here</Link></div>
 </div>
     )
 }

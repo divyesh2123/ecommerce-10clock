@@ -5,11 +5,19 @@ import App from './App';
 import Signup from './Signup'
 import Login from './Login';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from './store/store';
+import Counter from './Counter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App/>
+    <Provider store={store}>
+
+      <Counter/>
+
+
+    </Provider>
   </React.StrictMode>
 );
 

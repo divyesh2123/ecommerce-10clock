@@ -1,7 +1,18 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Header() {
-  return (
+  
+    const myNavigation = useNavigate();
+
+    const myLogout=()=>{
+
+      localStorage.removeItem("userInfo");
+      myNavigation("/");
+    }
+
+    return (
+
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
       <ul class="navbar-nav">
@@ -15,7 +26,7 @@ export default function Header() {
           <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <button className='nav-link' onClick={myLogout} style={{color: "red"}}>Logout</button>
         </li>
       </ul>
     </div>

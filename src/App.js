@@ -3,7 +3,9 @@ import logo from './logo.svg';
 import Login from './Login';
 import Signup from './Signup';
 import Product from './Product';
+import RequireAuth from './private/RequireAuth'
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import Button from './Button';
 
 function App() {
   return (
@@ -13,10 +15,14 @@ function App() {
 
     <Route path="/" element={<Login/>} />
     <Route path="/signup" element={<Signup/>} />
-    <Route path="/productlist" element={<Product/>}/>
+    <Route path="/productlist" element={<RequireAuth><Product/>
+    
+      </RequireAuth>}/>
 
 
     </Routes>
+
+    <Button><b>This is mydata</b></Button>
     </BrowserRouter>
   );
 }

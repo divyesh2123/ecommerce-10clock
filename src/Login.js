@@ -10,43 +10,45 @@ const[data,setData]= useState({
     password:"",
 });
 
-    const myNav = useNavigate();
+const myNav = useNavigate();
+const mySubmit =(e)=> {
 
-    const changeInput =(e)=>{
-
-        setData({...data,[e.target.name] : e.target.value});
-    }
-
-    const myStyle = {
-    //     color: "#fff",
-	// background: "#4c535d",
-	// fontfamily: "Roboto, sans-serif"
-    }
-
-    const mySubmit=(e)=>{
-
-        e.preventDefault();
-
-        axios.post("http://localhost:4000/accounts/authenticate",
-        data)
-        .then(y=>{
-            console.log(y);
-
-            localStorage.setItem("userInfo",JSON.stringify(y.data));
-            
-            myNav("/productlist");
-        })
-
-
+    console.log(e);
+    e.preventDefault();
+    fetch("https://real-pear-fly-kilt.cyclic.app/accounts/authenticate",{
+        body:JSON.stringify(data),
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        }
         
-    }
+    }).then(y=>y.json()).then(y=> {
 
-    return( <div className="signup-form" style={myStyle}>
+        console.log(y)
+
+        localStorage.setItem("userInfo",JSON.stringify(y));
+        myNav("/productlist");
+    });
+    
+   
+   
+
+
+}
+
+const changeInput =(e)=> {
+
+    setData({...data ,[e.target.name] : e.target.value})
+}
+
+
+
+    return( <div className="signup-form" >
     <form  onSubmit={mySubmit}>
 		<h2>Login</h2>
 		{/* <p>It's free and only takes a minute.</p> */}
 		<hr />
-        {/* <div className="form-group">
+        {/* <;b plll,h9op;k76tradiv className="form-group">
         	<input type="text" className="form-control" name="title" placeholder="Title" required="required" onChange={myChangeHandler} />
         </div> */}
         {/* <div className="form-group">
@@ -69,7 +71,7 @@ const[data,setData]= useState({
         </div>
 		
     </form>
-	<div className="text-center">Don't have an account? <Link to="/signup">Signup here</Link></div>
+	<div className="text-center">Don't have an account? <Link to="/signup" style={{color: "red"}}>Signup here</Link></div>
 </div>
     )
 }
