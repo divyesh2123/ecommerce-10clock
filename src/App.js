@@ -10,11 +10,16 @@ import Posts from './Posts';
 import NewPost from './NewPost';
 import Post from './Post';
 
+import Router from './Router';
+
 function App() {
   return (
     <BrowserRouter>
      <div>entired common things</div>
 
+     
+     <Router/>
+{/* 
     <Routes>
 
      
@@ -33,7 +38,7 @@ function App() {
  </Route>
 
 
-    </Routes>
+    </Routes> */}
 
     
     </BrowserRouter>
