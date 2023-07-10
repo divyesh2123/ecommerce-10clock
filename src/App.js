@@ -19,7 +19,7 @@ function App() {
 
      
      <Router/>
-{/* 
+ 
     <Routes>
 
      
@@ -32,13 +32,10 @@ function App() {
     
       </RequireAuth>}/>
 
-  <Route path='posts' element={<Posts />}>
-        <Route path='new' element={<NewPost />} /> 
-       <Route path=':postId' element={<Post />} /> 
- </Route>
+ 
 
 
-    </Routes> */}
+    </Routes> 
 
     
     </BrowserRouter>
