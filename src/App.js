@@ -16,6 +16,7 @@ import User1 from './User1';
 import Profile from './Profile.js';
 import Account from './Account.js';
 import MyRoutes from './MyRoutes.js';
+import { Suspense } from 'react';
 
 function App() {
   return (
@@ -26,9 +27,12 @@ function App() {
         <Link to="/home">Home</Link>
         <Link to="/user">User</Link>
       </nav>
+
+      <Suspense fallback={<div>Loading</div>}>
      
     <MyRoutes/>
  
+    </Suspense>
     {/* <Routes>
 
      

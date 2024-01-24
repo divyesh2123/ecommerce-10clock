@@ -7,11 +7,14 @@ import Profile from './Profile';
 import Account from './Account';
 import RequireAuth from './private/RequireAuth';
 import Product from './Product';
+const LoginNew = React.lazy(() => import("./Login"));
+
+
 
 export default function MyRoutes() {
     let element = useRoutes([
 
-        { path: "/", element: <Login /> },
+        { path: "/", element: <LoginNew /> },
         { path: "/signup", element: <Signup /> },
         { path: "/productlist", element: <RequireAuth><Product/>
 
