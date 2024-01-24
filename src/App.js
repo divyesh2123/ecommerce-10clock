@@ -15,6 +15,7 @@ import MyDisplay from './MyDisplay';
 import User1 from './User1';
 import Profile from './Profile.js';
 import Account from './Account.js';
+import MyRoutes from './MyRoutes.js';
 
 function App() {
   return (
@@ -26,9 +27,9 @@ function App() {
         <Link to="/user">User</Link>
       </nav>
      
-    
+    <MyRoutes/>
  
-    <Routes>
+    {/* <Routes>
 
      
 
@@ -56,7 +57,7 @@ function App() {
  
 
 
-    </Routes> 
+    </Routes>  */}
 
     
     </BrowserRouter>
